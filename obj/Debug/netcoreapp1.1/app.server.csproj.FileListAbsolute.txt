@@ -1,8 +1,0 @@
-d:\Guru\implementation\dot-net-core-mvc-angular-4-cli\app.server\bin\Debug\netcoreapp1.1\app.server.deps.json
-d:\Guru\implementation\dot-net-core-mvc-angular-4-cli\app.server\bin\Debug\netcoreapp1.1\app.server.runtimeconfig.json
-d:\Guru\implementation\dot-net-core-mvc-angular-4-cli\app.server\bin\Debug\netcoreapp1.1\app.server.runtimeconfig.dev.json
-d:\Guru\implementation\dot-net-core-mvc-angular-4-cli\app.server\bin\Debug\netcoreapp1.1\app.server.dll
-d:\Guru\implementation\dot-net-core-mvc-angular-4-cli\app.server\bin\Debug\netcoreapp1.1\app.server.pdb
-d:\Guru\implementation\dot-net-core-mvc-angular-4-cli\app.server\obj\Debug\netcoreapp1.1\app.server.AssemblyInfo.cs
-d:\Guru\implementation\dot-net-core-mvc-angular-4-cli\app.server\obj\Debug\netcoreapp1.1\app.server.dll
-d:\Guru\implementation\dot-net-core-mvc-angular-4-cli\app.server\obj\Debug\netcoreapp1.1\app.server.pdb
