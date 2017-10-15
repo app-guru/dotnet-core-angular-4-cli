@@ -2,14 +2,16 @@
     "name": "app.client",
     "version": "0.0.0",
     "license": "MIT",
-    "scripts": {
-        "ng": "ng",
-        "start": "ng serve",
-        "build": "ng build",
-        "test": "ng test",
-        "lint": "ng lint",
-        "e2e": "ng e2e"
-    },
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "build:Release": "ng build --prod",
+    "build:Debud": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
     "private": true,
     "dependencies": {
         "@angular/animations": "4.4.5",
