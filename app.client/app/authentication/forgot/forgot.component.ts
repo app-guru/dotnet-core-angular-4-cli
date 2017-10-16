@@ -9,16 +9,22 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 })
 export class ForgotComponent implements OnInit {
 
+  public mlforgot:MlForgot;
   public form: FormGroup;
   constructor(private fb: FormBuilder, private router: Router) {}
 
   ngOnInit() {
-    this.form = this.fb.group ( {
-      uname: [null , Validators.compose ( [ Validators.required ] )]
-    } );
+    this.mlforgot=new MlForgot;
+ 
+  }
+  btnForgot(){
+
   }
 
   onSubmit() {
     this.router.navigate ( [ '/' ] );
   }
+}
+class MlForgot {
+  UserName: string;
 }

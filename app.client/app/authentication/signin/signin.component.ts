@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-signin',
@@ -8,18 +8,28 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
   styleUrls: ['./signin.component.scss']
 })
 export class SigninComponent implements OnInit {
+  public mlsignin: MlSignin;
 
   public form: FormGroup;
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(private fb: FormBuilder, private router: Router) {
+    this.mlsignin = new MlSignin(); }
 
   ngOnInit() {
-    this.form = this.fb.group ( {
-      uname: [null , Validators.compose ( [ Validators.required ] )] , password: [null , Validators.compose ( [ Validators.required ] )]
-    } );
+    this.form = this.fb.group({
+      uname: [null, Validators.compose([Validators.required])], password: [null, Validators.compose([Validators.required])]
+    });
+  }
+  btnSignIn() { 
+    alert();
   }
 
   onSubmit() {
-    this.router.navigate ( [ '/' ] );
+    this.router.navigate(['/']);
   }
 
+}
+
+class MlSignin {
+  UserName: string;
+  Password: string;
 }
