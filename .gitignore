@@ -54,3 +54,5 @@ Thumbs.db
 # System Files
 /bin
 /obj
+# System Files
+/wwwroot/dist
