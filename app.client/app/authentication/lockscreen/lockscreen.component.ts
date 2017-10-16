@@ -7,9 +7,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./lockscreen.component.scss']
 })
 export class LockscreenComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   onSubmit() {
-    this.router.navigate ( [ '/' ] );
+    this.router.navigate(['/']);
   }
 }

@@ -20,12 +20,10 @@ export class SigninComponent implements OnInit {
     });
   }
   btnSignIn() { 
-    alert();
-  }
-
-  onSubmit() {
     this.router.navigate(['/']);
   }
+
+ 
 
 }
 

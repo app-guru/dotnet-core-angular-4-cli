@@ -1,0 +1,19 @@
+<div class="d-flex align-items-stretch min-height-100 h-100">
+    <div class="bg-cover bg-3 hidden-sm-down col-md-6 col-lg-8"></div>
+    <div class="card card-block mb-0 rounded-0 p-5 col-sm-12 col-md-6 col-lg-4">
+        <form #frmotp="ngForm" (ngSubmit)="frmotp.valid && btnOtp()">
+            <div class="mb-3">
+                <img src="assets/images/logo.png" class="avatar-xs mb-1" alt="">
+                <p class="ff-headers text-uppercase">Recover your password</p>
+            </div>
+            <fieldset class="form-group" [ngClass]="{'has-danger': Otp.hasError('required') &&  frmotp.submitted}">
+                <label for="Otp" class="form-control-label">
+            Enter your Otp
+          </label>
+                <input type="text" name="Otp" [(ngModel)]="mlotp.Otp" #Otp="ngModel" required class="form-control" placeholder="Otp" [ngClass]="{'form-control-danger': Otp.hasError('required') && frmotp.submitted}" />
+                <div class="form-control-feedback" *ngIf="Otp.hasError('required') && frmotp.submitted">Otp is required.</div>
+            </fieldset>
+            <button class="btn btn-primary" type="submit">Validate Otp</button>
+        </form>
+    </div>
+</div>
