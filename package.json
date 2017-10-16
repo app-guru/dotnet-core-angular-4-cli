@@ -2,16 +2,16 @@
     "name": "app.client",
     "version": "0.0.0",
     "license": "MIT",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "build:Release": "ng build --prod",
-    "build:Debud": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
-  },
+    "scripts": {
+        "ng": "ng",
+        "start": "ng serve",
+        "build": "ng build",
+        "build:Release": "ng build --prod",
+        "build:Debud": "ng build",
+        "test": "ng test",
+        "lint": "ng lint",
+        "e2e": "ng e2e"
+    },
     "private": true,
     "dependencies": {
         "@angular/animations": "4.4.5",
@@ -24,8 +24,6 @@
         "@angular/platform-browser-dynamic": "4.4.5",
         "@angular/router": "4.4.5",
         "@ng-bootstrap/ng-bootstrap": "1.0.0-beta.5",
-        "@ngx-translate/core": "8.0.0",
-        "@ngx-translate/http-loader": "2.0.0",
         "angular-calendar": "0.21.2",
         "angular-tree-component": "5.0.0",
         "angular2-text-mask": "8.0.4",

@@ -5,8 +5,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SidebarModule } from 'ng-sidebar';
 
@@ -16,9 +14,6 @@ import { AdminLayoutComponent } from './layouts/admin/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 import { SharedModule } from './shared/shared.module';
 
-export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-}
 
 @NgModule({
   declarations: [
@@ -33,13 +28,6 @@ export function createTranslateLoader(http: HttpClient) {
     RouterModule.forRoot(AppRoutes),
     FormsModule,
     HttpClientModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: (createTranslateLoader),
-        deps: [HttpClient]
-      }
-    }),
     NgbModule.forRoot(),
     SidebarModule.forRoot()
   ],
