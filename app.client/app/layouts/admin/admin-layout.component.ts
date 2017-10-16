@@ -6,7 +6,6 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { MenuItems } from '../../shared/menu-items/menu-items';
 import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/operator/filter';
-import { TranslateService } from '@ngx-translate/core';
 
 export interface Options {
   heading?: string;
@@ -41,11 +40,9 @@ export class AdminLayoutComponent implements OnInit, OnDestroy {
     public menuItems: MenuItems,
     private router: Router,
     private route: ActivatedRoute,
-    public translate: TranslateService,
     private modalService: NgbModal,
     private titleService: Title) {
-    const browserLang: string = translate.getBrowserLang();
-    translate.use(browserLang.match(/en|fr/) ? browserLang : 'en');
+
   }
 
   ngOnInit(): void {
