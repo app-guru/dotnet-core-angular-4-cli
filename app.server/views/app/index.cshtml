@@ -1,3 +1,6 @@
+@using System;
+@using System.Collections.Generic;
+@using System.Linq;
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -6,16 +9,22 @@
 <app-root></app-root>
 
   <div class="page-loading">
-       <img src="assets/images/oval.svg" class="loading-icon" />
+       <img src="dist/assets/images/oval.svg" class="loading-icon" />
   </div>
 
 <environment names="Development">
-<script type="text/javascript" src="dist/app-assets/scripts/bundle/inline.bundle.js"></script>
+<!-- <script type="text/javascript" src="dist/app-assets/scripts/bundle/inline.bundle.js"></script>
 <script type="text/javascript" src="dist/app-assets/scripts/bundle/polyfills.bundle.js"></script>
 <script type="text/javascript" src="dist/app-assets/scripts/bundle/styles.bundle.js"></script>
 <script type="text/javascript" src="dist/app-assets/scripts/bundle/vendor.bundle.js"></script>
-<script type="text/javascript" src="dist/app-assets/scripts/bundle/main.bundle.js"></script>
+<script type="text/javascript" src="dist/app-assets/scripts/bundle/main.bundle.js"></script> -->
+@foreach (var name in Scripts)
+{
+      <script type="text/javascript" src="dist/app-assets/scripts/bundle/@name"></script>
+}
 </environment>
 <environment names="Staging,Production">
-
+  @foreach (var name in Scripts){
+      <script type="text/javascript" src="dist/app-assets/scripts/bundle/@name"></script>
+  }
 </environment>

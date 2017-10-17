@@ -4,10 +4,8 @@
     <TargetFramework>netcoreapp1.1</TargetFramework>
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <AssemblyName>app.server</AssemblyName>
   </PropertyGroup>
-
-  <ItemGroup>
-  </ItemGroup>
 
   <ItemGroup>
     <Compile Remove="node_modules\**\*" />
@@ -38,6 +36,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="1.1.2" />
 
+    <PackageReference Include="Microsoft.AspNetCore.NodeServices" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices" Version="1.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.AngularServices" Version="1.1.0-beta-000002" />
 
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.2" />
@@ -49,7 +49,6 @@
     <PackageReference Include="Microsoft.Extensions.Options" Version="1.1.2" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
 
-    <PackageReference Include="AppGuru.AspNetCore.AngularCLI" Version="1.0.1" />
     <PackageReference Include="System.Diagnostics.Process" Version="4.3.0" />
     <PackageReference Include="System.Runtime.Serialization.Formatters" Version="4.3.0" />
   </ItemGroup>
@@ -58,6 +57,9 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
   </ItemGroup>
   <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">
+    <Exec Command="ng build --prod" />
+  </Target>
+  <Target Name="PrepublishScript" BeforeTargets="Be">
     <Exec Command="ng build --prod" />
   </Target>
 </Project>

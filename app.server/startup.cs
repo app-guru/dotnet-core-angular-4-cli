@@ -5,11 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using static Microsoft.AspNetCore.ResponseCompression.ResponseCompressionDefaults;
-using AppGuru.AspNetCore.AngularCLI;
+
 
 namespace app.server
 {
@@ -67,7 +68,10 @@ namespace app.server
 
             if (env.IsDevelopment())
             {
-                app.UseNgProxy();
+                app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
+                {
+                    HotModuleReplacement = true
+                });
                 app.UseDeveloperExceptionPage();
                 app.UseBrowserLink();
             }
