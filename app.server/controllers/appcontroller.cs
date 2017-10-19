@@ -18,7 +18,7 @@ namespace app.server.Controllers
         }
         public IActionResult Index()
         {
-            var Scripts = app_script_listAsync();
+            var Scripts = app_script_listAsync().Result;
             if (Scripts == null)
             {
                 return ViewError(501.1, "Resource are not found...! \r\n please contact your tech team immediately");
@@ -55,16 +55,22 @@ namespace app.server.Controllers
             if (!System.IO.Directory.Exists(basePath))
                 return null;
             var Dirinfo = new System.IO.DirectoryInfo(basePath);
-
-            if (Dirinfo.GetFiles().Where(file =>
-                  (
-                    file.Name.StartsWith("inline") || file.Name.StartsWith("polyfills") ||
-                    file.Name.StartsWith("vendor") || file.Name.StartsWith("styles") || file.Name.StartsWith("main")
-                  ) && file.Name.EndsWith(".js")
-            ).ToList().Count != 5)
+            var Tempfiles = Dirinfo.GetFiles().Where(file =>
+                              (
+                                file.Name.StartsWith("inline") || file.Name.StartsWith("polyfills") ||
+                                file.Name.StartsWith("vendor") || file.Name.StartsWith("styles") || file.Name.StartsWith("main")
+                              ) && System.IO.Path.GetExtension(file.FullName) == ".js"
+                        ).ToList();
+            var files = new List<String>();
+            // File order is important dont change this order
+            files.Add(Tempfiles.Where(f => f.Name.StartsWith("inline")).Select(f => f.Name).First());
+            files.Add(Tempfiles.Where(f => f.Name.StartsWith("polyfills")).Select(f => f.Name).First());
+            files.Add(Tempfiles.Where(f => f.Name.StartsWith("styles")).Select(f => f.Name).First());
+            files.Add(Tempfiles.Where(f => f.Name.StartsWith("vendor")).Select(f => f.Name).First());
+            files.Add(Tempfiles.Where(f => f.Name.StartsWith("main")).Select(f => f.Name).First());
+            if (files.Count != 5)
                 return null;
-            var files = Dirinfo.GetFiles().ToList().Select(itm => itm.Name);
-            return files.ToList();
+            return files;
         }
     }
 }

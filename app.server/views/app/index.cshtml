@@ -13,18 +13,16 @@
   </div>
 
 <environment names="Development">
-<!-- <script type="text/javascript" src="dist/app-assets/scripts/bundle/inline.bundle.js"></script>
-<script type="text/javascript" src="dist/app-assets/scripts/bundle/polyfills.bundle.js"></script>
-<script type="text/javascript" src="dist/app-assets/scripts/bundle/styles.bundle.js"></script>
-<script type="text/javascript" src="dist/app-assets/scripts/bundle/vendor.bundle.js"></script>
-<script type="text/javascript" src="dist/app-assets/scripts/bundle/main.bundle.js"></script> -->
-@foreach (var name in Scripts)
-{
-      <script type="text/javascript" src="dist/app-assets/scripts/bundle/@name"></script>
-}
+  @foreach (var name in (List<String>)ViewBag.Scripts)
+  {
+        <!-- IT PREVENT BUNDLED FILE LOAD FROM BROWSER CACHE ON DEVELOPMENT TIME -->
+        <script type="text/javascript" src="@Url.Content($"dist/app-assets/scripts/bundle/{name}?v={DateTime.Now.ToString("yyyyMMddhhmmss")}")"></script>
+  }
 </environment>
 <environment names="Staging,Production">
-  @foreach (var name in Scripts){
+  @foreach (var name in (List<String>)ViewBag.Scripts)
+  {
+      <!-- ON PRODUCTION TIME IT ADD HASH TAG ON FILE NAME BY WEBPACK PUBLISH -->
       <script type="text/javascript" src="dist/app-assets/scripts/bundle/@name"></script>
   }
 </environment>
