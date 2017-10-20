@@ -30,7 +30,7 @@ namespace app.server.Controllers
         {
             ViewBag.ErrorCode = ErrorCode;
             ViewBag.ErrorMessage = ErrorMessage;
-            return View($"{viewPath}/error.cshtml");
+            return View($"{viewPath}/app/error.cshtml");
         }
 
         public IActionResult Error()
