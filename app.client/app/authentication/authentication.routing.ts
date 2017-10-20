@@ -27,6 +27,10 @@ export const AuthenticationRoutes: Routes = [
       component: SignupComponent
     },
     {
+      path: '**',
+      redirectTo: 'error?code=404'
+    },
+    {
       path: 'error', component: PageErrorComponent
     },
     {
