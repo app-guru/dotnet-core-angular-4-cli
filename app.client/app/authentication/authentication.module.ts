@@ -1,3 +1,4 @@
+import { PageErrorComponent } from './page-error/page-error.component';
 import { password_reset_Component } from './password-reset/password_reset.component';
 import { OtpComponent } from './otp/otp.component';
 import { NgModule } from '@angular/core';
@@ -19,7 +20,7 @@ import { LockscreenComponent } from './lockscreen/lockscreen.component';
     ReactiveFormsModule
   ],
   declarations: [SigninComponent, SignupComponent, ForgotComponent, OtpComponent,
-    password_reset_Component, LockscreenComponent]
+    password_reset_Component, LockscreenComponent, PageErrorComponent]
 })
 
 export class AuthenticationModule { }

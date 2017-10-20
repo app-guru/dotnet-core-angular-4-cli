@@ -1,3 +1,4 @@
+import { PageErrorComponent } from './page-error/page-error.component';
 import { password_reset_Component } from './password-reset/password_reset.component';
 
 import { Routes } from '@angular/router';
@@ -13,17 +14,22 @@ export const AuthenticationRoutes: Routes = [
     children: [{
       path: '',
       component: SigninComponent
-    },{
+    },
+    {
       path: 'request', children: [
-        { path: 'forgot/pwd',component: ForgotComponent },
+        { path: 'forgot/pwd', component: ForgotComponent },
             { path: 'validate/otp', component: OtpComponent },
             { path: 'change/password-reset', component: password_reset_Component }
       ]
-    },
+      },
     {
       path: 'signup',
       component: SignupComponent
-    }, {
+    },
+    {
+      path: 'error', component: PageErrorComponent
+    },
+    {
       path: 'lockscreen',
       component: LockscreenComponent
     }]
