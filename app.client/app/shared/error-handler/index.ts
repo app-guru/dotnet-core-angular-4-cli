@@ -1,4 +1,4 @@
 // start:ng42.barrel
-export * from './global-error-handler';
+export * from './error-handler';
 // end:ng42.barrel
 

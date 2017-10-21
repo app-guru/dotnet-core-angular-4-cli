@@ -19,11 +19,12 @@ export class SigninComponent implements OnInit {
       uname: [null, Validators.compose([Validators.required])], password: [null, Validators.compose([Validators.required])]
     });
   }
-  btnSignIn() { 
-    this.router.navigate(['/']);
+  btnSignIn() {
+    // this.router.navigate(['/']);
+    throw new Error('poda');
   }
 
- 
+
 
 }
 

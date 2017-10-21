@@ -8,7 +8,7 @@ const autoprefixer = require('autoprefixer');
 const postcssUrl = require('postcss-url');
 const cssnano = require('cssnano');
 
-const { NoEmitOnErrorsPlugin, SourceMapDevToolPlugin, NamedModulesPlugin } = require('webpack');
+const { NoEmitOnErrorsPlugin, SourceMapDevToolPlugin, NamedModulesPlugin, HotModuleReplacementPlugin } = require('webpack');
 const { NamedLazyChunksWebpackPlugin, BaseHrefWebpackPlugin } = require('@angular/cli/plugins/webpack');
 const { CommonsChunkPlugin } = require('webpack').optimize;
 const { AotPlugin } = require('@ngtools/webpack');
@@ -424,6 +424,7 @@ module.exports = {
             "failOnError": false
         }),
         new NamedLazyChunksWebpackPlugin(),
+        // new HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
             "template": "./app.client\\index.html",
             "filename": "./index.html",

@@ -47,9 +47,6 @@ export const AppRoutes: Routes = [{
   component: AuthLayoutComponent,
   loadChildren: './authentication/authentication.module#AuthenticationModule'
 }, {
-  path: '**',
-  redirectTo: 'error/404'
-}, {
   path: 'error',
   loadChildren: './error/error.module#ErrorModule'
 }];

@@ -1,7 +1,7 @@
 import { PageErrorComponent } from './page-error/page-error.component';
 import { password_reset_Component } from './password-reset/password_reset.component';
 import { OtpComponent } from './otp/otp.component';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -19,8 +19,14 @@ import { LockscreenComponent } from './lockscreen/lockscreen.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [SigninComponent, SignupComponent, ForgotComponent, OtpComponent,
-    password_reset_Component, LockscreenComponent, PageErrorComponent]
+  declarations: [
+    SigninComponent,
+    SignupComponent,
+    ForgotComponent,
+    OtpComponent,
+    password_reset_Component,
+    LockscreenComponent,
+    PageErrorComponent
+  ]
 })
-
-export class AuthenticationModule { }
+export class AuthenticationModule {}
