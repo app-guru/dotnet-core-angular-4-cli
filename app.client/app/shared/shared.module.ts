@@ -8,6 +8,8 @@ import {
 } from './accordion';
 import { ToggleFullscreenDirective } from './fullscreen/toggle-fullscreen.directive';
 import { AuthGuard } from './guards';
+import { getDbConfig } from './db-store';
+import { NgDbHelperModule } from 'ng-db-helper';
 
 @NgModule({
   declarations: [
@@ -22,10 +24,7 @@ import { AuthGuard } from './guards';
     AccordionDirective,
     ToggleFullscreenDirective
   ],
-  providers: [
-    MenuItems,
-    AuthGuard
-
-  ]
+  imports: [NgDbHelperModule.forRoot(getDbConfig)],
+  providers: [MenuItems, AuthGuard]
 })
 export class SharedModule {}
