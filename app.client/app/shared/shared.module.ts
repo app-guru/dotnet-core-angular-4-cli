@@ -8,13 +8,15 @@ import {
 } from './accordion';
 import { ToggleFullscreenDirective } from './fullscreen/toggle-fullscreen.directive';
 import { AuthGuard } from './guards';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
     AccordionAnchorDirective,
     AccordionLinkDirective,
     AccordionDirective,
-    ToggleFullscreenDirective
+    ToggleFullscreenDirective,
+    HttpClientModule
   ],
   exports: [
     AccordionAnchorDirective,
