@@ -18,20 +18,16 @@ export const AuthenticationRoutes: Routes = [
     {
       path: 'request', children: [
         { path: 'forgot/pwd', component: ForgotComponent },
-            { path: 'validate/otp', component: OtpComponent },
-            { path: 'change/password-reset', component: password_reset_Component }
+        { path: 'validate/otp', component: OtpComponent },
+        { path: 'change/password-reset', component: password_reset_Component }
       ]
-      },
+    },
     {
       path: 'signup',
       component: SignupComponent
     },
     {
-      path: '**',
-      redirectTo: 'error?code=404'
-    },
-    {
-      path: 'error', component: PageErrorComponent
+      path: 'error/:code', component: PageErrorComponent
     },
     {
       path: 'lockscreen',

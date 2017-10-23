@@ -18,7 +18,8 @@ export class ForgotComponent implements OnInit {
 
   }
   btnForgot() {
-    this.router.navigate(['/authentication/signin/request/validate/otp']);
+    throw new Error('Hello1');
+    // this.router.navigate(['/authentication/signin/request/validate/otp']);
   }
 
 }

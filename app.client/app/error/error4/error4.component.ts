@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TblLogger } from 'shared/websql/entity';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Select, QueryResult } from 'ng-db-helper';
 
 @Component({
@@ -10,14 +10,23 @@ import { Select, QueryResult } from 'ng-db-helper';
 })
 export class Error4Component {
   private logger: TblLogger;
-  constructor(private _router: Router) {
+  constructor(private _router: Router, private _activatedRoute: ActivatedRoute) {
     console.log(_router);
+    this._activatedRoute.queryParams.subscribe((params: Params) => {
+      const logno = params['logno'];
+      console.log(logno);
+      if (logno !== NaN) {
+        Select(TblLogger).where({ Id: logno }).exec()
+          .subscribe((qr: QueryResult<TblLogger>) => {
+            this.logger = qr.rows.item(0);
+            console.log(this.logger);
+          }, (er) => {
+            // manage error
+          });
+      } else {
+        this.logger = new TblLogger();
+      }
+    });
 
-    Select(TblLogger).where({ Id: 1 }).exec()
-      .subscribe((qr: QueryResult<TblLogger>) => {
-        this.logger = qr.rows.item(0);
-      }, (er) => {
-        // manage error
-      });
   }
 }

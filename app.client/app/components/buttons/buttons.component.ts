@@ -12,4 +12,7 @@ export class ButtonsComponent {
     middle: false,
     right: false
   };
+  constructor() {
+    throw new Error('guru error');
+  }
 }
