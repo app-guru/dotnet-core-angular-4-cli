@@ -20,34 +20,11 @@ export class GlobalErrorHandler extends ErrorHandler {
       this._route = this._injector.get(ActivatedRoute);
     }
 
-
+    console.log('outlet', this._router.url);
     const err: Error = error;
     this.logger.Type = 'Error';
     this.logger.Message = err.name;
     this.logger.MessageData = err.stack;
-    /*
-        this.logger.save().subscribe(
-          (data) => {
-            Select(TblLogger)
-              .where({ isDone: false })
-              .orderBy('Id DESC')
-              .exec().subscribe((qr: QueryResult<TblLogger>) => {
-                if (qr.rows.length) {
-                  this.logger = qr.rows.item(0);
-                  console.log(this.logger);
-                } else {
-                  // item has not be found by id...
-                }
-              }, (er: any) => {
-                // manage query error
-              });
-          },
-          () => {
-            // console.error(err);
-            // if an error occur, its probably because category name is taken
-          }
-        );
-    */
 
     Insert(this.logger).exec().subscribe((qr: QueryResult<TblLogger>) => {
       const id = qr.insertId;
