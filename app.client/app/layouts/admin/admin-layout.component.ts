@@ -1,9 +1,9 @@
-import { Component, OnInit, OnDestroy, ViewChild, HostListener, AnimationTransitionEvent } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, HostListener, AnimationTransitionEvent, Inject } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
-import { MenuItems } from '../../shared/menu-items/menu-items';
+import { MenuService } from 'shared';
 import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/operator/filter';
 
@@ -36,8 +36,8 @@ export class AdminLayoutComponent implements OnInit, OnDestroy {
 
   @ViewChild('sidebar') sidebar;
 
-  constructor (
-    public menuItems: MenuItems,
+  constructor(
+    public menuItems: MenuService,
     private router: Router,
     private route: ActivatedRoute,
     private modalService: NgbModal,
@@ -78,8 +78,8 @@ export class AdminLayoutComponent implements OnInit, OnDestroy {
     this._router.unsubscribe();
   }
 
-  setTitle( newTitle: string) {
-    this.titleService.setTitle( 'Decima - Bootstrap 4 Angular Admin Template | ' + newTitle );
+  setTitle(newTitle: string) {
+    this.titleService.setTitle('Decima - Bootstrap 4 Angular Admin Template | ' + newTitle);
   }
 
   toogleSidebar(): void {
@@ -103,8 +103,8 @@ export class AdminLayoutComponent implements OnInit, OnDestroy {
       type: 'sub',
       icon: 'basic-webpage-txt',
       children: [
-        {state: 'menu', name: 'MENU'},
-        {state: 'menu', name: 'MENU'}
+        { state: 'menu', name: 'MENU' },
+        { state: 'menu', name: 'MENU' }
       ]
     });
   }

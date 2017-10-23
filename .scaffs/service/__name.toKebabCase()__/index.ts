@@ -1,0 +1,1 @@
+export { <%= name.toProperCase() %>Service } from  './<%= name.toKebabCase() %>.service';

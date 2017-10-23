@@ -1,0 +1,8 @@
+{
+    "scaffsPaths": [
+        "./.scaffs"
+    ],
+    "headers": {
+        "*.{ts,js,scss}": "\/\/ ============================================\n\/\/ Author\t\t\t\t\t\t: Prabakaran\n\/\/ Description\t\t\t:\n\/\/ Date\t\t\t\t\t\t\t:\n\/\/ ============================================\n"
+    }
+}

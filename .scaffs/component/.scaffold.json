@@ -1,0 +1,12 @@
+{
+    "variables": [{
+            "name": "filename",
+            "prompt": "Enter filename"
+        },
+        {
+            "name": "componentname",
+            "prompt": "Enter component name",
+            "optional": true
+        }
+    ]
+}

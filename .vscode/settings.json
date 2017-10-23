@@ -1,2 +1,57 @@
 {
+    "files.exclude": {
+        "**/.editorconfig": true,
+        "**/.gitignore": true,
+        "**/LICENSE": true,
+        "**/*.md": true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "bin": true,
+        "obj": true,
+        "node_modules": true,
+        "Properties": true,
+        "*.xproj": true,
+        "*.xproj.user": true,
+        "_gsdata_": true,
+        "backup": true,
+        "*.syncdb": true,
+        "*.scaffs": true,
+        "*.xlsx": true,
+        "*.txt": true,
+        "*.csproj": false,
+        "*.csproj.user": true,
+        "*.angulardoc.json": true,
+        "*.sln": true,
+        ".scaffs-config.json": true,
+        "*.log": true
+    },
+    "workbench.colorTheme": "Dracula",
+    "workbench.iconTheme": "material-icon-theme",
+    "[scss]": {
+        "editor.formatOnPaste": false,
+        "editor.formatOnSave": false
+    },
+    "[html]": {
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true
+    },
+    "[css]": {
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true
+    },
+    "[typescript]": {
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true
+    },
+    "[javascript]": {
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true
+    },
+    "editor.fontFamily": "Consolas, 'Courier New', monospace",
+    "git.confirmSync": false,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true
 }

@@ -1,16 +1,20 @@
 // start:ng42.barrel
-export * from './chartData';
+export * from './class';
+// export * from './class/menu-items';
+export * from './component';
+export * from './directive';
+// export * from './directive/accordion';
+// export * from './directive/fullscreen';
+export * from './guard';
+// export * from './guard/auth';
+export * from './handler';
+// export * from './handler/global-error';
+export * from './service';
+// export * from './service/api';
+// export * from './service/helper';
+export * from './websql';
+// export * from './websql/entity';
+// export * from './websql/entity/logger';
 export * from './shared.module';
-export * from './accordion';
-export * from './db-store';
-export * from './db-store/logger';
-export * from './error-handler';
-export * from './fullscreen';
-export * from './guards';
-export * from './menu-items';
-export * from './error-handler';
-export * from './http-services/http.config';
-export * from './http-services/http.services';
-
 // end:ng42.barrel
 

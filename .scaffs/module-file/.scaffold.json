@@ -1,0 +1,13 @@
+{
+    "variables": [
+		{
+			"name": "filename",
+            "prompt": "enter file name"
+		},
+		{
+			"name": "modulename",
+            "prompt": "Enter module name",
+            "optional": true
+		}
+    ]
+}

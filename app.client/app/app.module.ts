@@ -12,22 +12,25 @@ import { AppRoutes } from './app.routing';
 import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
-import { SharedModule } from '@shared';
-import { GlobalErrorHandler } from './shared/error-handler';
+import { SharedModule } from './shared';
+import { CommonModule } from '@angular/common';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent],
   imports: [
+    CommonModule,
+    HttpModule,
     BrowserModule,
     BrowserAnimationsModule,
-    SharedModule,
-    RouterModule.forRoot(AppRoutes),
     FormsModule,
     HttpClientModule,
+    RouterModule.forRoot(AppRoutes),
+    SharedModule,
     NgbModule.forRoot(),
     SidebarModule.forRoot()
   ],
-  providers: [{ provide: ErrorHandler, useClass: GlobalErrorHandler }],
+  providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
