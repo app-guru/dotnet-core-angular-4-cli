@@ -1,0 +1,19 @@
+<div class="d-flex align-items-stretch min-height-100 h-100 bg-1">
+  <div class="bg-cover bg-1 hidden-sm-down col-md-6 col-lg-8"></div>
+  <div class="card card-block mb-0 rounded-0 p-5 col-sm-12 col-md-6 col-lg-4 align-middle">
+    <div class="text-center error-center">
+      <div class="error-number fw-900 text-uppercase" style="color: #ce5656">
+        <i class="fa fa-frown-o"></i>
+      </div>
+      <div class="error-number fw-900 text-uppercase" style="color: #ce5656">Error {{ErrorCode}}
+      </div>
+      <h6 class="fw-600 m-1">{{Message}}</h6>
+      <div class="ff-headers fw-300">
+        <small>{{MessageData}}</small>
+      </div>
+      <div class="ff-headers fw-300">
+        <a [routerLink]="['/auth/signin']" class="btn btn-sm btn-info text-white">Take me signin</a>
+      </div>
+    </div>
+  </div>
+</div>

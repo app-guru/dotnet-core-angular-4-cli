@@ -1,0 +1,43 @@
+<div class="d-flex align-items-stretch min-height-100 h-100">
+  <div class="bg-cover bg-1 hidden-sm-down col-md-6 col-lg-8"></div>
+  <div class="card card-block mb-0 rounded-0 p-5 col-sm-12 col-md-6 col-lg-4">
+    <!-- <form #frmSignIn="ngForm" (ngSubmit)="frmSignIn.valid && btnSignIn()"> -->
+
+    <form #frmSignIn="ngForm" (ngSubmit)="btnSignIn()">
+      <div class="mb-3 text-center">
+        <img src="dist/assets/images/logos/logo.webp" style="width: 5em" alt="">
+        <p class="ff-headers text-uppercase">Sign in to your account</p>
+      </div>
+      <fieldset class="form-group" [ngClass]="{'has-danger': UserName.hasError('required') &&  frmSignIn.submitted}">
+        <label for="username" class="form-control-label">
+          Enter your username
+        </label>
+        <input type="text" name="UserName" [(ngModel)]="mlsignin.UserName" #UserName="ngModel" required class="form-control" placeholder="username"
+          [ngClass]="{'form-control-danger': UserName.hasError('required') && frmSignIn.submitted}" />
+        <div class="form-control-feedback" *ngIf="UserName.hasError('required') && frmSignIn.submitted">Username is required.</div>
+      </fieldset>
+      <fieldset class="form-group" [ngClass]="{'has-danger': Password.hasError('required') && frmSignIn.submitted}">
+        <label for="Password" class="form-control-label">
+          Enter your Password
+        </label>
+        <input type="password" name="Password" [(ngModel)]="mlsignin.Password" #Password="ngModel" required class="form-control"
+          placeholder="********" [ngClass]="{'form-control-danger': Password.hasError('required') && frmSignIn.submitted}"
+        />
+        <div class="form-control-feedback" *ngIf="Password.hasError('required') && frmSignIn.submitted">Password is required.</div>
+        <a [routerLink]="['/authentication/signin/request/forgot/pwd']" class="form-text">
+          <small>Recover password</small>
+        </a>
+      </fieldset>
+
+      <label class="custom-control custom-checkbox mb-3">
+        <input type="checkbox" class="custom-control-input">
+        <span class="custom-control-indicator"></span>
+        <span class="custom-control-description">Stay logged in</span>
+      </label>
+      <div class="block"></div>
+      <button class="btn btn-primary" type="submit">Login</button>
+      <a class="btn btn-outline-primary btn-link" [routerLink]="['/authentication/signup']">Create an account!</a>
+    </form>
+  </div>
+
+</div>

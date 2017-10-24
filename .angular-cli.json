@@ -2,16 +2,13 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
     "name": "app.client",
-    "ejected": true
+    "ejected": false
   },
   "apps": [
     {
       "root": "app.client",
       "outDir": "wwwroot/dist",
-      "assets": [
-        "assets",
-        "favicon.ico"
-      ],
+      "assets": ["assets", "favicon.ico"],
       "baseHref": "/",
       "index": "index.html",
       "main": "main.ts",
@@ -48,8 +45,7 @@
   ],
   "defaults": {
     "styleExt": "scss",
-    "component": {
-    }
+    "component": {}
   },
   "warnings": {
     "typescriptMismatch": false

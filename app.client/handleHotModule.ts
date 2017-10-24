@@ -16,7 +16,7 @@ export function handleHotModule(
   bootFunction: (isModuleHot: boolean) => void
 ): void {
   const isModuleHot = !!bootstrapModule.hot;
-
+  console.log('isModuleHot', isModuleHot);
   if (isModuleHot) {
     bootstrapModule.hot.accept();
     bootstrapModule.hot.dispose(() => {

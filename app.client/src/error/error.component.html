@@ -1,0 +1,12 @@
+<div class="d-flex align-items-stretch min-height-100 bg-dark text-white">
+  <div class="p-5">
+    <div class="error-number fw-900 text-warning text-uppercase">Error {{ErrorCode}}
+      <i class="fa fa-frown-o"></i>
+    </div>
+
+    <h6 class="fw-300 mb-0">{{Message}}</h6>
+    <small class="ff-headers fw-300">{{MessageData}}
+      <a [routerLink]="['/']">Take me home</a>
+    </small>
+  </div>
+</div>

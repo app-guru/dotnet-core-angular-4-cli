@@ -70,8 +70,7 @@ namespace app.server
             {
                 app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
                 {
-                    HotModuleReplacement = true,
-                    ConfigFile = "webpack.config.js"
+                    HotModuleReplacement = true
                 });
                 app.UseDeveloperExceptionPage();
                 app.UseBrowserLink();
